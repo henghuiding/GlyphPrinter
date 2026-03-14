@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="GlyphPrinter - Xincheng Shuai">
+  <!-- <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS"> -->
+  <meta name="keywords" content="AIGC, visual generation, machine learning, computer vision, text rendering, text generation, image generation, AI">
+  <meta name="author" content="Xincheng Shuai, Ziye Li, Henghui Ding, Dacheng Tao">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Fudan University">
+  <meta property="og:title" content="GlyphPrinter">
+  <!-- <meta property="og:description" content=""> -->
+  <meta property="og:url" content="">
+  <meta property="og:image" content="static/images/teaser.jpg">
+  <meta property="og:image:alt" content="GlyphPrinter - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Xincheng Shuai">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="AIGC">
+
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering">
+  <meta name="citation_author" content="Xincheng Shuai">
+  <meta name="citation_author" content="Ziye Li">
+  <meta name="citation_author" content="Henghui Ding">
+  <meta name="citation_author" content="Dacheng Tao">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="CVPR 2026">
+  <!-- <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf"> -->
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>GlyphPrinter</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/fudancvl.webp">
+  <link rel="apple-touch-icon" href="static/images/fudancvl.webp">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  <script defer src="static/js/tex-mml-chtml.js"></script>
+  
+
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/xinchengshuai/" target="_blank">Xincheng Shuai<sup>1,*</sup></a>,</span>
+                <span class="author-block">
+                <a href="https://github.com/ZyLieee/" target="_blank">Ziye Li<sup>1,*</sup></a>,</span>
+                <span class="author-block">
+                  <a href="https://henghuiding.com/" target="_blank">Henghui Ding<sup>1,✉</sup></a>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=RwlJNLcAAAAJ&hl=en" target="_blank">Dacheng Tao<sup>2</sup></a>
+                </span>
+                </div>
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block"> <sup>1 </sup>Fudan University, <sup>2 </sup>Nanyang Technological University<br><span class="author-block"><font color="#FF6403"><b>CVPR 2026</b></font></span></span>
+                  <span class="eql-cntrb"><small><br>* Equal Contribution, &nbsp;&nbsp;<object id="object" data="static/images/envelope.svg" width="16" height="16" type="image/svg+xml" style="position:relative;top:3px;"></object> Corresponding Author</small>
+                </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/FudanCVL/GlyphPrinter" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero ">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <!-- <h2 class="title">Challenges in Visual Text Rendering</h2> -->
+        <div class="has-text-centered">
+          <img src="static/images/teaser.jpg" alt="GlyphPrinter Architecture" style="width:100%; height:auto;" loading="eager">
+        </div>
+        <p>
+         <b>Challenges in Visual Text Rendering:</b> Existing advanced methods still struggle to generate accurate glyphs in challenging scenarios, such as complex Chinese characters or emojis, limiting their practical applicability.  
+        </p>
+    </div>
+  </div>
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.jpg" alt="Teaser image" style="width:100%; height:auto;" loading="eager">
+      <h2 class="subtitle has-text-centered">
+      </h2>
+    </div>
+  </div> -->
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Generating accurate glyphs for visual text rendering is essential yet challenging. Existing methods typically enhance text rendering by training on a large amount of high-quality scene text images, but the limited coverage of glyph variations and excessive stylization often compromise glyph accuracy, especially for complex or out-of-domain characters. Some methods leverage reinforcement learning to alleviate this issue, yet their reward models usually depend on text recognition systems that are insensitive to fine-grained glyph errors, so images with incorrect glyphs may still receive high rewards. Inspired by Direct Preference Optimization (DPO), we propose <b>GlyphPrinter</b>, a preference-based text rendering method that eliminates reliance on explicit reward models. However, the standard DPO objective only models overall preference between two samples, which is insufficient for visual text rendering where glyph errors typically occur in localized regions. To address this issue, we construct the <b>GlyphCorrector</b> dataset with region-level glyph preference annotations and propose <b>Region-Grouped DPO</b> (<b>R-GDPO</b>), a region-based objective that optimizes inter- and intra-sample preferences over annotated regions, substantially enhancing glyph accuracy. Furthermore, we introduce <b>Regional Reward Guidance</b>, an inference strategy that samples from an optimal distribution with controllable glyph accuracy. Extensive experiments demonstrate that the proposed GlyphPrinter outperforms existing methods in glyph accuracy while maintaining a favorable balance between stylization and precision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="hero ">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title">Methodology</h2>
+      <div class="content has-text-justified" style="margin-top: 20px;">
+        <p>
+          <strong>Model Architecture:</strong> 
+          <b>(a) Construction of the attention mask used in GlyphPrinter</b>. In addition to the prompt-image and intra-modality attentions, we only enable the communication between the image features from the text region and the corresponding glyph feature for each text block. <b>(b) Construction of the preference masks used in R-GDPO</b>. Our GlyphCorrector contains region-level preference annotations for samples from each generated group, where the incorrect text regions are highlighted with green boxes. To make more efficient use of data, we simultaneously use <em>inter-sample</em> and <em>intra-sample preference masks</em> to construct winning-losing pairs.
+        </p>
+        <div class="has-text-centered">
+          <img src="static/images/pipeline.jpg" alt="GlyphPrinter Architecture" style="width:100%; height:auto;" loading="eager">
+        </div>
+        <br>
+        <p>
+          <strong>Training Strategy:</strong> 
+          <b>(a) Stage 1</b>. GlyphPrinter first fine-tunes the underlying T2I model on collected text images (synthetic&realistic) to improve the text rendering ability, obtaining the baseline model. 
+        <!-- </p> -->
+        <div class="has-text-centered">
+          <img src="static/images/dataset.jpg" alt="Stage 1 Dataset" style="width:100%; height:auto;" loading="eager">
+        </div>  
+          <b>(b) Stage 2</b>. Inspired by how humans correct spelling errors through feedback on glyph mistakes, we construct GlyphCorrector with fine-grained annotations of correct and incorrect glyph regions. Based on this dataset, GlyphPrinter is optimized with the proposed <b>Region-Grouped Direct Preference Optimization (R-GDPO)</b> for enhancing glyph accuracy.
+        </p>
+        <div class="has-text-centered">
+          <img src="static/images/glyph-corrector.jpg" alt="Stage 2 Dataset (GlyphCorrector)" style="width:100%; height:auto;" loading="eager">
+        </div>
+
+        <br>
+        <p>
+          <strong>Inference Strategy:</strong> 
+          In addition, we introduce <b>Regional Reward Guidance (RRG)</b> during inference for more controllability. 
+        </p>
+        <div class="has-text-centered">
+          <img src="static/images/rrg.png" alt="RRG Algorithm" style="width:100%; height:auto;" loading="eager">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light">
+  
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title">Experiments</h2>
+      <div class="content has-text-justified" style="margin-bottom: 20px;">
+        <p>
+         we evaluate the model's glyph accuracy under various scenarios, illustrating the model's performance for multilingual, complex (eg., complicated Chinese characters), and out-of-domain (eg., emoji) text rendering.
+        </p>
+      </div>
+      <div class="has-text-centered">
+        <img src="static/images/benchmark_multilingual.jpg" alt="Multilingual" style="width:100%; height:auto;" loading="eager">
+        <p class="has-text-centered" style="margin: 10px 0 30px 0; font-size: 0.95em;">
+          <strong>Multilingual Editing:</strong> Comparison results under multilingual conditions.
+        </p>
+        <img src="static/images/benchmark_complex.jpg" alt="Complex" style="width:100%; height:auto;" loading="eager">
+        <p class="has-text-centered" style="margin: 10px 0 30px 0; font-size: 0.95em;">
+          <strong>Complex Text Rendering:</strong> Comparison results under complex conditions.
+        </p>
+        
+        <img src="static/images/benchmark_emoji.jpg" alt="Out-of-Domain" style="width:100%; height:auto;" loading="eager">
+        <p class="has-text-centered" style="margin: 10px 0 30px 0; font-size: 0.95em;">
+          <strong>Out-of-Domain Text Rendering:</strong> Comparison results under out-of-domain conditions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{GlyphPrinter,
+        title={{GlyphPrinter}: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering},
+        author={Shuai Xincheng and Li, Ziye and Ding, Henghui and Tao, Dacheng},
+        booktitle={CVPR},
+        year={2026}
+      }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            <center><font size=2>© FudanCVL | Last updated: 16/03/2026</font></center>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
+
+
